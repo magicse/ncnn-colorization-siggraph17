@@ -15,6 +15,5 @@ COLOR_GAN -i 17.jpg
 
 ## Based on:<br>
 ###### Colorful Image Colorization [richzhang/colorization](https://github.com/richzhang/colorization)<br>
-###### Colorful Image Colorization [Colorful Image Colorization](http://richzhang.github.io/colorization/)
 ## <b>Colorful Image Colorization</b> [[Project Page]](http://richzhang.github.io/colorization/) <br>
 [Richard Zhang](https://richzhang.github.io/), [Phillip Isola](http://web.mit.edu/phillipi/), [Alexei A. Efros](http://www.eecs.berkeley.edu/~efros/).
