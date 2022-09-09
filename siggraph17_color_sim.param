@@ -1,0 +1,88 @@
+7767517
+86 92
+Input            input                    0 1 input
+Split            splitncnn_input0         1 4 input input_splitncnn_0 input_splitncnn_1 input_splitncnn_2 input_splitncnn_3
+BinaryOp         Mul_11                   1 1 input_splitncnn_3 onnx::Concat_109 0=2 1=1 2=0.000000e+00
+BinaryOp         Mul_13                   1 1 input_splitncnn_2 onnx::Concat_111 0=2 1=1 2=0.000000e+00
+Concat           Concat_14                2 1 onnx::Concat_109 onnx::Concat_111 input_B 0=0
+BinaryOp         Mul_16                   1 1 input_splitncnn_1 onnx::Concat_114 0=2 1=1 2=0.000000e+00
+BinaryOp         Sub_18                   1 1 input_splitncnn_0 onnx::Div_116 0=1 1=1 2=5.000000e+01
+BinaryOp         Div_20                   1 1 onnx::Div_116 onnx::Concat_118 0=3 1=1 2=1.000000e+02
+BinaryOp         Div_22                   1 1 input_B onnx::Concat_120 0=3 1=1 2=1.100000e+02
+Concat           Concat_23                3 1 onnx::Concat_118 onnx::Concat_120 onnx::Concat_114 input.1 0=0
+Convolution      Conv_24                  1 1 input.1 input.3 0=64 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=2304
+ReLU             Relu_25                  1 1 input.3 onnx::Conv_123
+Convolution      Conv_26                  1 1 onnx::Conv_123 input.7 0=64 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=36864
+ReLU             Relu_27                  1 1 input.7 onnx::BatchNormalization_125
+BatchNorm        BatchNormalization_28    1 1 onnx::BatchNormalization_125 input.11 0=64
+Split            splitncnn_0              1 2 input.11 input.11_splitncnn_0 input.11_splitncnn_1
+Sig17Slice       Slice_33                 1 1 input.11_splitncnn_1 input.15
+Convolution      Conv_39                  1 1 input.15 input.19 0=128 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=73728
+ReLU             Relu_40                  1 1 input.19 onnx::Conv_138
+Convolution      Conv_41                  1 1 onnx::Conv_138 input.23 0=128 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=147456
+ReLU             Relu_42                  1 1 input.23 onnx::BatchNormalization_140
+BatchNorm        BatchNormalization_43    1 1 onnx::BatchNormalization_140 input.27 0=128
+Split            splitncnn_1              1 2 input.27 input.27_splitncnn_0 input.27_splitncnn_1
+Sig17Slice       Slice_48                 1 1 input.27_splitncnn_1 input.31
+Convolution      Conv_54                  1 1 input.31 input.35 0=256 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=294912
+ReLU             Relu_55                  1 1 input.35 onnx::Conv_153
+Convolution      Conv_56                  1 1 onnx::Conv_153 input.39 0=256 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=589824
+ReLU             Relu_57                  1 1 input.39 onnx::Conv_155
+Convolution      Conv_58                  1 1 onnx::Conv_155 input.43 0=256 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=589824
+ReLU             Relu_59                  1 1 input.43 onnx::BatchNormalization_157
+BatchNorm        BatchNormalization_60    1 1 onnx::BatchNormalization_157 input.47 0=256
+Split            splitncnn_2              1 2 input.47 input.47_splitncnn_0 input.47_splitncnn_1
+Sig17Slice       Slice_65                 1 1 input.47_splitncnn_1 input.51
+Convolution      Conv_71                  1 1 input.51 input.55 0=512 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=1179648
+ReLU             Relu_72                  1 1 input.55 onnx::Conv_170
+Convolution      Conv_73                  1 1 onnx::Conv_170 input.59 0=512 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=2359296
+ReLU             Relu_74                  1 1 input.59 onnx::Conv_172
+Convolution      Conv_75                  1 1 onnx::Conv_172 input.63 0=512 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=2359296
+ReLU             Relu_76                  1 1 input.63 onnx::BatchNormalization_174
+BatchNorm        BatchNormalization_77    1 1 onnx::BatchNormalization_174 input.67 0=512
+Convolution      Conv_78                  1 1 input.67 input.71 0=512 1=3 11=3 2=2 12=2 3=1 13=1 4=2 14=2 15=2 16=2 5=1 6=2359296
+ReLU             Relu_79                  1 1 input.71 onnx::Conv_177
+Convolution      Conv_80                  1 1 onnx::Conv_177 input.75 0=512 1=3 11=3 2=2 12=2 3=1 13=1 4=2 14=2 15=2 16=2 5=1 6=2359296
+ReLU             Relu_81                  1 1 input.75 onnx::Conv_179
+Convolution      Conv_82                  1 1 onnx::Conv_179 input.79 0=512 1=3 11=3 2=2 12=2 3=1 13=1 4=2 14=2 15=2 16=2 5=1 6=2359296
+ReLU             Relu_83                  1 1 input.79 onnx::BatchNormalization_181
+BatchNorm        BatchNormalization_84    1 1 onnx::BatchNormalization_181 input.83 0=512
+Convolution      Conv_85                  1 1 input.83 input.87 0=512 1=3 11=3 2=2 12=2 3=1 13=1 4=2 14=2 15=2 16=2 5=1 6=2359296
+ReLU             Relu_86                  1 1 input.87 onnx::Conv_184
+Convolution      Conv_87                  1 1 onnx::Conv_184 input.91 0=512 1=3 11=3 2=2 12=2 3=1 13=1 4=2 14=2 15=2 16=2 5=1 6=2359296
+ReLU             Relu_88                  1 1 input.91 onnx::Conv_186
+Convolution      Conv_89                  1 1 onnx::Conv_186 input.95 0=512 1=3 11=3 2=2 12=2 3=1 13=1 4=2 14=2 15=2 16=2 5=1 6=2359296
+ReLU             Relu_90                  1 1 input.95 onnx::BatchNormalization_188
+BatchNorm        BatchNormalization_91    1 1 onnx::BatchNormalization_188 input.99 0=512
+Convolution      Conv_92                  1 1 input.99 input.103 0=512 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=2359296
+ReLU             Relu_93                  1 1 input.103 onnx::Conv_191
+Convolution      Conv_94                  1 1 onnx::Conv_191 input.107 0=512 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=2359296
+ReLU             Relu_95                  1 1 input.107 onnx::Conv_193
+Convolution      Conv_96                  1 1 onnx::Conv_193 input.111 0=512 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=2359296
+ReLU             Relu_97                  1 1 input.111 onnx::BatchNormalization_195
+BatchNorm        BatchNormalization_98    1 1 onnx::BatchNormalization_195 onnx::ConvTranspose_196 0=512
+Deconvolution    ConvTranspose_99         1 1 onnx::ConvTranspose_196 onnx::Add_197 0=256 1=4 11=4 2=1 12=1 3=2 13=2 4=1 14=1 15=1 16=1 5=1 6=2097152
+Convolution      Conv_100                 1 1 input.47_splitncnn_0 onnx::Add_198 0=256 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=589824
+BinaryOp         Add_101                  2 1 onnx::Add_197 onnx::Add_198 input.115 0=0
+ReLU             Relu_102                 1 1 input.115 onnx::Conv_200
+Convolution      Conv_103                 1 1 onnx::Conv_200 input.119 0=256 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=589824
+ReLU             Relu_104                 1 1 input.119 onnx::Conv_202
+Convolution      Conv_105                 1 1 onnx::Conv_202 input.123 0=256 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=589824
+ReLU             Relu_106                 1 1 input.123 onnx::BatchNormalization_204
+BatchNorm        BatchNormalization_107   1 1 onnx::BatchNormalization_204 onnx::ConvTranspose_205 0=256
+Deconvolution    ConvTranspose_108        1 1 onnx::ConvTranspose_205 onnx::Add_206 0=128 1=4 11=4 2=1 12=1 3=2 13=2 4=1 14=1 15=1 16=1 5=1 6=524288
+Convolution      Conv_109                 1 1 input.27_splitncnn_0 onnx::Add_207 0=128 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=147456
+BinaryOp         Add_110                  2 1 onnx::Add_206 onnx::Add_207 input.127 0=0
+ReLU             Relu_111                 1 1 input.127 onnx::Conv_209
+Convolution      Conv_112                 1 1 onnx::Conv_209 input.131 0=128 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=147456
+ReLU             Relu_113                 1 1 input.131 onnx::BatchNormalization_211
+BatchNorm        BatchNormalization_114   1 1 onnx::BatchNormalization_211 onnx::ConvTranspose_212 0=128
+Deconvolution    ConvTranspose_115        1 1 onnx::ConvTranspose_212 onnx::Add_213 0=128 1=4 11=4 2=1 12=1 3=2 13=2 4=1 14=1 15=1 16=1 5=1 6=262144
+Convolution      Conv_116                 1 1 input.11_splitncnn_0 onnx::Add_214 0=128 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=73728
+BinaryOp         Add_117                  2 1 onnx::Add_213 onnx::Add_214 input.135 0=0
+ReLU             Relu_118                 1 1 input.135 onnx::Conv_216
+Convolution      Conv_119                 1 1 onnx::Conv_216 input.139 0=128 1=3 11=3 2=1 12=1 3=1 13=1 4=1 14=1 15=1 16=1 5=1 6=147456
+ReLU             LeakyRelu_120            1 1 input.139 input.143 0=2.000000e-01
+Convolution      Conv_121                 1 1 input.143 onnx::Tanh_219 0=2 1=1 11=1 2=1 12=1 3=1 13=1 4=0 14=0 15=0 16=0 5=1 6=256
+UnaryOp          Tanh_122                 1 1 onnx::Tanh_219 out_reg 0=16
+BinaryOp         Mul_124                  1 1 out_reg out_ab 0=2 1=1 2=1.100000e+02
