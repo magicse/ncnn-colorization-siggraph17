@@ -1,4 +1,4 @@
-# ncnn-colorization-sigagraph17
+# ncnn-colorization-siggraph17
 Example of colorization with ncnn SIGGRAPH 2017.
 
 ## Prerequisites<br>
