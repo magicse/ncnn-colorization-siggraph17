@@ -1,5 +1,5 @@
 # ncnn-colorization-siggraph17
-Example of colorization with ncnn SIGGRAPH 2017.
+Example of AI colorization with ncnn SIGGRAPH 2017.
 ![pict](https://user-images.githubusercontent.com/13585785/189326958-f5a8d6f8-caef-49bf-88da-ae494371195d.jpg)
 
 
