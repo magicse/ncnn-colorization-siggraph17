@@ -45,7 +45,7 @@ static int colorization(const cv::Mat& bgr, const cv::Mat& out_image)
   //Extract L channel
   cv::extractChannel(lab, L, 0);
 
-  //Resize to input shape 224x224
+  //Resize to input shape 256x256
   resize(L, input_img, cv::Size(W_in, H_in));
 
   //We subtract 50 from the L channel (for mean centering)
